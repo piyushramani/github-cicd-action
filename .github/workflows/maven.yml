@@ -47,7 +47,7 @@ jobs:
       image: docker.io/piyush1678/github-cicd-actions:latest
       credentials:
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
     steps:
       - name: super-step
         shell: bash
