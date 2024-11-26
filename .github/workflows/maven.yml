@@ -39,3 +39,19 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+
+
+  container-test-job:
+    runs-on: ubuntu-latest
+    container:
+      image: docker.io/piyush1678/github-cicd-actions:latest
+      credentials:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
+    steps:
+      - name: super-step
+        shell: bash
+        run: |
+          # Whatever commands you want to run here using the container with your
+          # new Docker image at ghcr.io!
+          echo "--This is running in my custom Docker image--"
