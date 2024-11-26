@@ -48,12 +48,12 @@ jobs:
       credentials:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    services:
-      db:
-        image: docker.io/piyush1678/github-cicd-actions:latest
-        credentials:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+#    services:
+#      db:
+#        image: docker.io/piyush1678/github-cicd-actions:latest
+#        credentials:
+#          username: ${{ secrets.DOCKER_USERNAME }}
+#          password: ${{ secrets.DOCKER_PASSWORD }}
     steps:
       - name: super-step
         #shell: bash
@@ -62,4 +62,4 @@ jobs:
           # new Docker image at ghcr.io!
           # echo "--This is running in my custom Docker image--"
           docker images
-          docker run -p 8080:8080 github-cicd-actions.jar
+          # docker run -p 8080:8080 github-cicd-actions.jar
